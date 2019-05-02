@@ -18,7 +18,7 @@ param()
     to more easily access exactly the item you want from the collection. In the above example, it's
     quite simple to access only the Age or Name value, as you please.
 
-    Hashtables are also frequently used as input to many more customisable parameters for
+    Hashtables are also frequently used as input to many more customizable parameters for
     PowerShell cmdlets.
 #>
 Describe 'Hashtables' {

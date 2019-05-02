@@ -217,7 +217,7 @@ Describe 'Regex Operators' {
 
     Context 'Replace' {
         <#
-            -replace also utilises regex to change the input string. Similarly to the string
+            -replace also utilizes regex to change the input string. Similarly to the string
             method .Replace($a,$b) it will replace every instance of the found pattern in the
             given string.
         #>

@@ -226,7 +226,7 @@ Describe 'Switch' {
         It 'allows use of conditional expressions' {
             $TestValue = __
             <#
-                Unlike many other languages, PowerShell allows you to customise switches immensely
+                Unlike many other languages, PowerShell allows you to customize switches immensely
                 through the use of script blocks to create dynamic conditions
             #>
             switch ($TestValue) {

@@ -32,7 +32,7 @@ Describe 'Pipelines and Loops' {
         #>
         1..5 | ForEach-Object {
             <#
-                ForEach-Object is a cmdlet that utilises the pipeline to create a
+                ForEach-Object is a cmdlet that utilizes the pipeline to create a
                 sort of loop, where each object that it receives from the pipeline
                 has the same set of actions performed on it.
 
@@ -62,7 +62,7 @@ Describe 'Pipelines and Loops' {
         __ | Should -Be $Strings
     }
 
-    It 'is like a specialised loop' {
+    It 'is like a specialized loop' {
         <#
             Standard loops are also available in PowerShell, but unlike other languages we
             can still utilise PowerShell's output stream to bundle all their output.
@@ -94,8 +94,8 @@ Describe 'Pipelines and Loops' {
             (++$Tick)
 
             # An alternative would be the following:
-            # $returnvalue = ++$Tick
-            # $returnvalue
+            # $returnValue = ++$Tick
+            # $returnValue
             # Perhaps slightly more clear but more verbose
 
             if ($Tick -gt 2) {

@@ -161,7 +161,7 @@ I am number #$Number!
 
         It 'allows use of quotation marks easily' {
             $AllYourQuotes = @"
-All things that are not 'evaluated' are "recognised" as characters.
+All things that are not 'evaluated' are "recognized" as characters.
 "@
             '__' | Should -Be $AllYourQuotes
         }

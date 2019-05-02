@@ -5,7 +5,7 @@ param()
     Apply Your Knowledge!
 
     Below is a list containing comma separated data about Microsoft's stock prices
-    during March of 2012. Without modifying the list, programatically find the day
+    during March of 2012. Without modifying the list, programmatically find the day
     with the greatest variance between the opening and closing price.
 
     The following operations may be of use:

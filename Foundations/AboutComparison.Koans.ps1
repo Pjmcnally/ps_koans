@@ -39,7 +39,7 @@ Describe 'Comparison Operators' {
             __ | Should -Be (10 -ne '10')
         }
 
-        It 'has a strict behaviour with most strings' {
+        It 'has a strict behavior with most strings' {
             # Strings containing text behave a little differently in some cases
             'string' -eq 1 | Should -Be $false
 
@@ -58,7 +58,7 @@ Describe 'Comparison Operators' {
             [string]$false | Should -Be '__'
         }
 
-        It 'changes behaviour with arrays' {
+        It 'changes behavior with arrays' {
             # Note that the array must always be on the left hand side of the comparison
             $Array = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
