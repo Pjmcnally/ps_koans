@@ -24,7 +24,7 @@ Describe 'Arrays' {
         # Individual elements of an array can be accessed with square-bracket index syntax.
         # Arrays are zero-indexed; the first element is at index 0, the second at 1, etc.
         $Ages[0] | Should -Be 12
-        __ | Should -Be $Ages[3]
+        64 | Should -Be $Ages[3]
 
         <#
             The array subexpression operator @() is used to create an array from multiple values
@@ -41,7 +41,7 @@ Describe 'Arrays' {
         )
 
         # Where is index 4 in the above array?
-        __ | Should -Be $Names[4]
+        'Serena' | Should -Be $Names[4]
     }
 
     It 'allows the collection to be split into multiple parts' {
@@ -51,13 +51,13 @@ Describe 'Arrays' {
         $Jim, $Ashley, $Theresa, $Bob, $Janice = $Ages
 
         $Jim | Should -Be 11
-        __ | Should -Be $Bob
+        74 | Should -Be $Bob
 
         # Arrays can be unevenly split by specifying fewer variables.
         $Jim, $Ashley, $Others = $Ages
 
         # What would be stored in $Others?
-        __ | Should -Be $Others
+        @(25, 74, 19) | Should -Be $Others
 
         <#
             If you know the contents of the array and want to skip specific elements, you can
@@ -66,33 +66,33 @@ Describe 'Arrays' {
             you attempt to assign to it will be ignored.
         #>
         $null, $Number1, $Number2 = $Others
-        __ | Should -Be $Number1
+        74 | Should -Be $Number1
     }
 
     It 'lets you build a subset of the original array' {
         $Array = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-        $Start = __
-        $Finish = __
+        $Start = 5
+        $Finish = 7
 
         # Arrays let you pick a range of indexes to build new arrays
         $Array[$Start..$Finish] | Should -Be @(6, 7, 8)
 
         # You can also select specific index numbers
-        $Index = __
+        $Index = 8
         $Array[1, $Index, 4] | Should -Be @(2, 9, 5)
     }
 
     It 'allows use of negative indexes' {
         $Array = 1, 2, 3, 4, 5, 6, 7
-        __ | Should -Be $Array[-1] # What is the -1th item?
+        7 | Should -Be $Array[-1] # What is the -1th item?
 
         # Negative numbers can also form a range and extract subsets
-        $Array[-4..-1] | Should -Be @(5, 6, 7) # Is anything missing?
-        $Index = __
+        $Array[-3..-1] | Should -Be @(5, 6, 7) # Is anything missing?
+        $Index = 0
         $Array[-3, $Index, -6] | Should -Be @(5, 1, 2)
 
         # You can make clever use of this to reverse an entire array!
-        $LastIndex = __ # Hint: needs to be a negative number!
+        $LastIndex = -7 # Hint: needs to be a negative number!
         $Array[-1..$LastIndex] | Should -Be @(7, 6, 5, 4, 3, 2, 1)
     }
 
@@ -100,9 +100,9 @@ Describe 'Arrays' {
         $Array = 1, 2, 3, 4
 
         # It allows negative indexes, but what about indexes out of range?
-        __ | Should -Be $Array[4]
+        $null | Should -Be $Array[4]
 
         # What about undefined negative indexes?
-        __ | Should -Be $Array[-10]
+        $null | Should -Be $Array[-10]
     }
 }
