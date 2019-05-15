@@ -149,21 +149,21 @@ Describe 'Strings' {
 
         It 'can be an evaluated string' {
             # The key is in the patterns.
-            $Number = __
+            $Number = 1
 
             # These can mess with indentation rules, but have their uses nonetheless!
             $String = @"
 I am number #$Number!
 "@
 
-            '__' | Should -Be $String
+            'I am number #1!' | Should -Be $String
         }
 
         It 'allows use of quotation marks easily' {
             $AllYourQuotes = @"
 All things that are not 'evaluated' are "recognized" as characters.
 "@
-            '__' | Should -Be $AllYourQuotes
+            'All things that are not ''evaluated'' are "recognized" as characters.' | Should -Be $AllYourQuotes
         }
     }
 }
